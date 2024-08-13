@@ -1,0 +1,6 @@
+{
+    "target": "https://goldwin.com/",
+    "minGamesPerCountry": {
+        "DE": 42
+    }
+}
