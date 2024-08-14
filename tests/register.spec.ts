@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 const randomName = require ('random-name');
 
-test('test', async ({ page }) => {
+test('Register test', async ({ page }) => {
   const email = randomName.first().toLowerCase() + "@example.com";
   //let username = randomName.first().toLowerCase();
   //while (username.length < 5) {
@@ -26,6 +26,7 @@ test('test', async ({ page }) => {
     .locator("div")
     .click();
   await page.getByTestId("register:continue").click();
+  await expect(page.getByTestId("register:first-name")).toBeVisible();
   await page.getByTestId("register:first-name").fill("test");
   await page.getByTestId("register:last-name").click();
   await page.getByTestId("register:last-name").fill("games");
